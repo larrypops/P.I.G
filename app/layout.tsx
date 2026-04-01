@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Manrope, Sora } from "next/font/google";
 
 import { SiteFooter } from "@/components/server/site-footer";
 import { SiteHeader } from "@/components/server/site-header";
@@ -7,7 +7,7 @@ import { siteUrl } from "@/lib/site-data";
 
 import "@/app/globals.css";
 
-const fontDisplay = Cormorant_Garamond({
+const fontDisplay = Sora({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["500", "600", "700"],
@@ -69,7 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="fr">
       <body className={`${fontDisplay.variable} ${fontSans.variable} bg-[var(--background)] font-sans text-[var(--foreground)] antialiased`}>
-        <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(194,145,46,0.14),transparent_32%),linear-gradient(180deg,#f9f5ec_0%,#f4efe4_45%,#fbfaf7_100%)]">
+        <div className="min-h-screen">
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
