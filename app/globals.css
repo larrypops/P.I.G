@@ -58,35 +58,119 @@ body::before {
 
 @layer base {
   p {
-    @apply leading-7 text-[var(--muted)];
+    line-height: 1.75;
+    color: var(--muted);
   }
 }
 
 @layer components {
   .content-grid,
   .container-shell {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .section-space,
   .section-gap {
-    @apply py-16 sm:py-20;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .panel {
-    @apply rounded-[2rem] border border-[color:var(--border)] bg-white/80 shadow-[var(--shadow-soft)] backdrop-blur;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(16px);
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--brand-fade)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--brand-dark)];
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 9999px;
+    background: var(--brand-fade);
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--brand-dark);
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-contrast)] shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-dark)];
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--brand);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--brand-contrast);
+    box-shadow: var(--shadow-soft);
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .button-primary:hover {
+    transform: translateY(-2px);
+    background: var(--brand-dark);
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-[var(--border-strong)] bg-white/75 px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand)];
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-strong);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--foreground);
+    transition:
+      border-color 0.25s ease,
+      color 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .button-secondary:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+}
+
+@media (min-width: 640px) {
+  @layer components {
+    .content-grid,
+    .container-shell {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .section-space,
+    .section-gap {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @layer components {
+    .content-grid,
+    .container-shell {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
 
