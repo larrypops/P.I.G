@@ -10,6 +10,7 @@ type GalleryItem = {
   title: string;
   category: string;
   image: string;
+  summary: string;
 };
 
 type GalleryFilterProps = {
@@ -24,9 +25,7 @@ export function GalleryFilter({ items }: GalleryFilterProps) {
   const [active, setActive] = useState("Toutes");
 
   const filteredItems =
-    active === "Toutes"
-      ? items
-      : items.filter((item) => item.category === active);
+    active === "Toutes" ? items : items.filter((item) => item.category === active);
 
   return (
     <div className="space-y-8">
@@ -37,10 +36,10 @@ export function GalleryFilter({ items }: GalleryFilterProps) {
             type="button"
             onClick={() => setActive(category)}
             className={cn(
-              "rounded-full px-5 py-3 text-sm font-semibold",
+              "rounded-full px-5 py-3 text-sm font-semibold transition",
               active === category
-                ? "bg-brand-ink text-white shadow-soft"
-                : "border border-brand-bronze/15 bg-white/70 text-brand-ink hover:border-brand-bronze/40 hover:bg-brand-gold/10",
+                ? "bg-[var(--foreground)] text-white shadow-[var(--shadow-soft)]"
+                : "border border-[var(--border-strong)] bg-white/85 text-[var(--foreground)] hover:border-[var(--brand)] hover:bg-[var(--brand-fade)]",
             )}
           >
             {category}
@@ -51,22 +50,23 @@ export function GalleryFilter({ items }: GalleryFilterProps) {
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredItems.map((item, index) => (
           <Reveal key={`${item.title}-${item.image}`} delay={index * 40}>
-            <article className="panel group overflow-hidden">
+            <article className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-white shadow-[var(--shadow-card)]">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                  className="object-cover transition duration-700 hover:scale-[1.03]"
                 />
               </div>
               <div className="space-y-2 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-bronze">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
                   {item.category}
                 </p>
-                <h3 className="font-serif text-xl font-semibold text-brand-ink">
+                <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">
                   {item.title}
                 </h3>
+                <p className="text-sm leading-7 text-[var(--muted)]">{item.summary}</p>
               </div>
             </article>
           </Reveal>
