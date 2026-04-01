@@ -20,72 +20,74 @@ import {
 export const metadata = createMetadata({
   title: "Accueil",
   description:
-    "Presentation institutionnelle de la Police Internationale d'Intervention Generale, de ses missions, de son organisation et de ses points de contact.",
+    "Présentation institutionnelle de la Police Internationale d'Intervention Générale, de ses missions, de son organisation et de ses points de contact.",
 });
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden px-4 pb-20 pt-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <section className="section-gap relative overflow-hidden pt-10 sm:pt-12">
+        <div className="container-shell grid gap-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-center lg:gap-14">
           <Reveal className="relative z-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--brand)]">
-              Presentation institutionnelle
-            </p>
-            <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl font-semibold leading-[0.95] text-[var(--foreground)] sm:text-6xl lg:text-7xl">
-              Une organisation presentee autour de la protection, de la coordination et du service.
+            <span className="eyebrow">Présentation institutionnelle</span>
+            <h1 className="mt-6 max-w-4xl text-balance font-display text-[2.9rem] font-semibold leading-[0.94] text-[var(--foreground)] sm:text-[4.1rem] lg:text-[5.35rem]">
+              Une organisation présentée autour de la protection, de la coordination et du service.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
+            <p className="mt-6 prose-readable text-[1.05rem] leading-8 text-[var(--muted)] sm:text-[1.1rem]">
               Le site de la P.I.G rassemble ses missions prioritaires, ses repères de gouvernance,
-              ses actions documentees et les coordonnees utiles pour les demandes
+              ses actions documentées et les coordonnées utiles pour les demandes
               institutionnelles et partenariales.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/missions"
-                className="rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-contrast)] shadow-[var(--shadow-soft)] transition hover:bg-[var(--brand-dark)]"
-              >
+            <div className="mt-8 flex flex-wrap gap-3.5">
+              <Link href="/missions" className="button-primary">
                 Explorer les missions
               </Link>
-              <Link
-                href="/contact"
-                className="rounded-full border border-[var(--border-strong)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
-              >
+              <Link href="/contact" className="button-secondary">
                 Contacter l'organisation
               </Link>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="grid gap-5 md:grid-cols-[1.2fr_0.8fr]">
-              <div className="overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+            <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+              <div className="media-frame">
                 <Image
                   src="/images/hero/headquarters-team.jpg"
-                  alt="Equipe rassemblee devant le siege national"
+                  alt="Équipe rassemblée devant le siège national"
                   width={1600}
                   height={1200}
-                  className="h-full w-full object-cover"
+                  className="aspect-[4/4.6] w-full object-cover md:aspect-[4/5]"
                   priority
                 />
               </div>
-              <div className="space-y-5">
-                <div className="overflow-hidden rounded-[30px] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-card)]">
+              <div className="grid gap-4">
+                <div className="panel-muted rounded-[1.8rem] p-4">
                   <Image
                     src="/images/hero/logo-crest.jpg"
                     alt="Blason de la P.I.G"
                     width={1200}
                     height={1000}
-                    className="h-56 w-full rounded-[22px] object-cover"
+                    className="aspect-[4/3] w-full rounded-[1.4rem] object-cover"
                   />
                 </div>
-                <div className="rounded-[30px] border border-[var(--border)] bg-[var(--foreground)] p-6 text-white shadow-[var(--shadow-card)]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--brand-light)]">
-                    Lecture rapide
-                  </p>
-                  <p className="mt-4 text-lg leading-8 text-white/82">
-                    Une vitrine institutionnelle pour comprendre la mission, l'organisation, la
-                    chronologie et les relais de contact.
-                  </p>
+                <div className="panel-dark flex flex-col justify-between gap-4 p-6 text-white">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--brand-light)]">
+                      Lecture rapide
+                    </p>
+                    <p className="mt-4 text-base leading-8 text-white/78">
+                      Une vitrine institutionnelle pour comprendre la mission, l'organisation, la
+                      chronologie et les relais de contact.
+                    </p>
+                  </div>
+                  <div className="rounded-[1.25rem] border border-white/10 bg-white/5 px-4 py-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/50">
+                      Objectif du site
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/72">
+                      Offrir un parcours lisible, crédible et cohérent à tous les visiteurs.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,13 +95,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="content-grid pb-10">
+      <section className="container-shell section-tight pt-0">
         <Reveal>
           <StatGrid items={homeStats} />
         </Reveal>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap">
         <SectionHeading
           eyebrow="Mission et positionnement"
           title="Les grands repères utiles pour comprendre l'institution"
@@ -108,7 +110,7 @@ export default function HomePage() {
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {highlights.map((item, index) => (
             <Reveal key={item.title} delay={index * 90}>
-              <article className="rounded-[30px] border border-[var(--border)] bg-white p-7 shadow-[var(--shadow-card)]">
+              <article className="panel-muted rounded-[1.85rem] p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                   {item.kicker}
                 </p>
@@ -122,37 +124,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space content-grid">
-        <div className="grid gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
+      <section className="container-shell section-gap pt-0">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <Reveal>
-            <div className="overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+            <div className="media-frame">
               <Image
                 src="/images/about/minat-group-photo.jpg"
-                alt="Photo de groupe au siege national"
+                alt="Photo de groupe au siège national"
                 width={1200}
                 height={900}
-                className="h-full w-full object-cover"
+                className="aspect-[4/3.4] w-full object-cover"
               />
             </div>
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading
               eyebrow="Ancrage institutionnel"
-              title="Une lecture fondee sur la mission, la responsabilite et la preuve documentaire"
-              description="Le contenu disponible permet de presenter l'organisation sans effet de surenchere, avec un ton institutionnel centre sur la lisibilite et la coherence."
+              title="Une lecture fondée sur la mission, la responsabilité et la preuve documentaire"
+              description="Le contenu disponible permet de présenter l'organisation sans effet de surenchère, avec un ton institutionnel centré sur la lisibilité et la cohérence."
             />
             <div className="mt-8 grid gap-4">
               {aboutPillars.map((pillar) => (
-                <article
-                  key={pillar.title}
-                  className="rounded-[24px] border border-[var(--border)] bg-white px-5 py-5 shadow-[var(--shadow-card)]"
-                >
-                  <h3 className="text-lg font-semibold text-[var(--foreground)]">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
-                    {pillar.description}
-                  </p>
+                <article key={pillar.title} className="panel-muted rounded-[1.5rem] px-5 py-5">
+                  <h3 className="text-lg font-semibold text-[var(--foreground)]">{pillar.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{pillar.description}</p>
                 </article>
               ))}
             </div>
@@ -160,45 +155,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap pt-0">
         <SectionHeading
           eyebrow="Missions prioritaires"
-          title="Des domaines d'action complementaires"
-          description="Les missions de la P.I.G sont presentees comme un ensemble coherent : veille, protection, mediation, sensibilisation et interventions organisees."
+          title="Des domaines d'action complémentaires"
+          description="Les missions de la P.I.G sont présentées comme un ensemble cohérent : veille, protection, médiation, sensibilisation et interventions organisées."
         />
         <div className="mt-10">
           <MissionGrid items={missions} />
         </div>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            href="/missions"
-            className="rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-contrast)] shadow-[var(--shadow-soft)] transition hover:bg-[var(--brand-dark)]"
-          >
-            Voir le detail des missions
+        <div className="mt-8 flex flex-wrap gap-3.5">
+          <Link href="/missions" className="button-primary">
+            Voir le détail des missions
           </Link>
-          <Link
-            href="/actions"
-            className="rounded-full border border-[var(--border-strong)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
-          >
+          <Link href="/actions" className="button-secondary">
             Consulter les actions
           </Link>
         </div>
       </section>
 
-      <section className="section-space content-grid">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <section className="container-shell section-gap pt-0">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <Reveal>
             <SectionHeading
-              eyebrow="Direction generale"
-              title="Une gouvernance centrale completee par des relais de terrain"
-              description="Le site distingue la direction generale, les relais regionaux et les fonctions de representation pour donner une lecture plus claire des responsabilites."
+              eyebrow="Direction générale"
+              title="Une gouvernance centrale complétée par des relais de terrain"
+              description="Le site distingue la direction générale, les relais régionaux et les fonctions de représentation pour donner une lecture claire des responsabilités."
             />
             <div className="mt-8 grid gap-4">
               {executiveLeaders.map((leader) => (
-                <article
-                  key={leader.name}
-                  className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]"
-                >
+                <article key={leader.name} className="panel-muted rounded-[1.7rem] p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                     {leader.role}
                   </p>
@@ -213,20 +199,20 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={110}>
-            <div className="rounded-[36px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)]">
+            <div className="panel-muted rounded-[2rem] p-5">
               <Image
                 src={missionDetails[2].image}
                 alt="Action de protection des consommateurs"
                 width={1000}
                 height={1000}
-                className="h-full w-full rounded-[28px] object-cover"
+                className="aspect-[4/3.25] w-full rounded-[1.6rem] object-cover"
               />
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {values.map((value) => (
                 <div
                   key={value}
-                  className="rounded-[24px] border border-[var(--border)] bg-white px-5 py-4 text-sm font-medium text-[var(--foreground)] shadow-[var(--shadow-card)]"
+                  className="panel-muted rounded-[1.4rem] px-5 py-4 text-sm font-medium text-[var(--foreground)]"
                 >
                   {value}
                 </div>
@@ -236,25 +222,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap pt-0">
         <SectionHeading
           eyebrow="Repères chronologiques"
-          title="Des jalons de gouvernance depuis la creation"
-          description="La chronologie aide a situer la structuration de l'organisation et la succession des phases de commandement mises en avant dans le dossier."
+          title="Des jalons de gouvernance depuis la création"
+          description="La chronologie aide à situer la structuration de l'organisation et la succession des phases de commandement mises en avant dans le dossier."
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-5">
           {timeline.map((step, index) => (
             <Reveal key={step.period} delay={index * 80}>
-              <article className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)] lg:h-full">
+              <article className="panel-muted h-full rounded-[1.7rem] p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                   {step.period}
                 </p>
-                <h3 className="mt-4 text-lg font-semibold text-[var(--foreground)]">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                  {step.description}
-                </p>
+                <h3 className="mt-4 text-lg font-semibold text-[var(--foreground)]">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{step.description}</p>
               </article>
             </Reveal>
           ))}

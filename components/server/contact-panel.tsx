@@ -4,9 +4,9 @@ export function ContactPanel() {
   return (
     <div className="space-y-8">
       <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="rounded-[30px] border border-[var(--border)] bg-white p-8 shadow-[var(--shadow-card)]">
+        <div className="panel-muted rounded-[1.9rem] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--brand)]">
-            Coordonnees
+            Coordonnées
           </p>
           <div className="mt-6 space-y-6 text-sm leading-7 text-[var(--muted)]">
             <div>
@@ -26,7 +26,7 @@ export function ContactPanel() {
           </div>
         </div>
 
-        <div className="rounded-[30px] border border-[var(--border)] bg-[var(--foreground)] p-8 text-white shadow-[var(--shadow-soft)]">
+        <div className="panel-dark p-8 text-white">
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--brand-light)]">
             Prendre contact
           </p>
@@ -34,8 +34,8 @@ export function ContactPanel() {
             Pour une demande institutionnelle, un partenariat ou une prise d'information
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-7 text-white/72">
-            Utilisez les coordonnees ci-contre pour entrer en relation avec la P.I.G. La page est
-            pensee pour faciliter la preparation d'une demande claire et adaptee au bon canal.
+            Utilisez les coordonnées ci-contre pour entrer en relation avec la P.I.G. La page est
+            pensée pour faciliter la préparation d'une demande claire et adaptée au bon canal.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <a
@@ -55,7 +55,7 @@ export function ContactPanel() {
       </div>
 
       <div className="grid gap-5 lg:grid-cols-3">
-        <div className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]">
+        <div className="panel-muted rounded-[1.75rem] p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
             Types de demandes
           </p>
@@ -65,15 +65,15 @@ export function ContactPanel() {
             ))}
           </ul>
         </div>
-        <div className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]">
+        <div className="panel-muted rounded-[1.75rem] p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
-            Horaires de reference
+            Horaires de référence
           </p>
           <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{contactDetails.officeHours}</p>
         </div>
-        <div className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]">
+        <div className="panel-muted rounded-[1.75rem] p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
-            Delai indicatif
+            Délai indicatif
           </p>
           <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{contactDetails.responseTime}</p>
         </div>

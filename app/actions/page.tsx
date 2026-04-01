@@ -10,14 +10,14 @@ import { actionStories } from "@/lib/site-data";
 const method = [
   "Observation et collecte d'informations",
   "Coordination avec les parties prenantes",
-  "Deploiement ou suivi de terrain selon les besoins",
+  "Déploiement ou suivi de terrain selon les besoins",
   "Documentation et formulation de recommandations",
 ];
 
 export const metadata = createPageMetadata({
-  title: "Actions et actualites",
+  title: "Actions et actualités",
   description:
-    "Retrouvez les actions recentes de la P.I.G : reunions strategiques, suivi institutionnel, protection des consommateurs et inauguration du siege national.",
+    "Retrouvez les actions récentes de la P.I.G : réunions stratégiques, suivi institutionnel, protection des consommateurs et inauguration du siège national.",
   path: "/actions",
 });
 
@@ -26,8 +26,8 @@ export default function ActionsPage() {
     <>
       <PageHero
         eyebrow="Actions"
-        title="Des actions documentees pour illustrer la coordination, le terrain et l'ancrage institutionnel."
-        description="A partir des visuels et informations du dossier, cette page rassemble plusieurs temps forts representatifs de l'activite et de la presence institutionnelle de la P.I.G."
+        title="Des actions documentées pour illustrer la coordination, le terrain et l'ancrage institutionnel."
+        description="À partir des visuels et informations du dossier, cette page rassemble plusieurs temps forts représentatifs de l'activité et de la présence institutionnelle de la P.I.G."
         image="/images/actions/minat-visit-2.jpg"
         imageAlt="Mission de suivi institutionnel"
         primaryCta={{ href: "/galerie", label: "Voir la galerie" }}
@@ -37,8 +37,8 @@ export default function ActionsPage() {
       <section className="container-shell section-gap">
         <SectionHeading
           eyebrow="Temps forts"
-          title="Des sequences d'action restituees avec davantage de contexte"
-          description="Chaque bloc relie une image a un contexte, une temporalite et une finalite institutionnelle afin d'eviter l'effet de simple galerie decorative."
+          title="Des séquences d'action restituées avec davantage de contexte"
+          description="Chaque bloc relie une image à un contexte, une temporalité et une finalité institutionnelle afin d'éviter l'effet de simple galerie décorative."
         />
         <div className="mt-10 space-y-6">
           {actionStories.map((story, index) => (
@@ -71,9 +71,9 @@ export default function ActionsPage() {
           <Reveal>
             <div className="panel p-8 lg:p-10">
               <SectionHeading
-                eyebrow="Methode d'intervention"
-                title="Une approche fondee sur la coordination, la rigueur et la tracabilite"
-                description="Les actions mises en avant dans le dossier revelent une logique commune de preparation, de deploiement, d'echange et de suivi."
+                eyebrow="Méthode d'intervention"
+                title="Une approche fondée sur la coordination, la rigueur et la traçabilité"
+                description="Les actions mises en avant dans le dossier révèlent une logique commune de préparation, de déploiement, d'échange et de suivi."
               />
               <ul className="mt-8 grid gap-4">
                 {method.map((item) => (
@@ -89,13 +89,13 @@ export default function ActionsPage() {
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="overflow-hidden rounded-[2rem] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+            <div className="media-frame">
               <Image
                 src="/images/hero/headquarters.jpg"
-                alt="Facade du siege national"
+                alt="Façade du siège national"
                 width={1200}
                 height={1000}
-                className="h-full w-full object-cover"
+                className="aspect-[4/3.6] w-full object-cover"
               />
             </div>
           </Reveal>
@@ -103,8 +103,8 @@ export default function ActionsPage() {
       </section>
 
       <CtaBanner
-        title="Echanger avec la P.I.G a propos d'une action, d'une representation ou d'un partenariat"
-        description="Utilisez la page contact pour joindre le bureau France ou le bureau Afrique et preparer un echange adapte a votre besoin."
+        title="Échanger avec la P.I.G à propos d'une action, d'une représentation ou d'un partenariat"
+        description="Utilisez la page contact pour joindre le bureau France ou le bureau Afrique et préparer un échange adapté à votre besoin."
         primary={{ href: "/contact", label: "Nous contacter" }}
       />
     </>

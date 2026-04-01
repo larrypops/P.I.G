@@ -15,7 +15,7 @@ import {
 export const metadata = createMetadata({
   title: "Organisation",
   description:
-    "Direction generale, relais regionaux, departements et responsables mis en avant par la Police Internationale d'Intervention Generale.",
+    "Direction générale, relais régionaux, départements et responsables mis en avant par la Police Internationale d'Intervention Générale.",
   path: "/organisation",
 });
 
@@ -24,89 +24,81 @@ export default function OrganisationPage() {
     <>
       <PageHero
         eyebrow="Organisation"
-        title="Une organisation presentee entre direction generale, relais regionaux et services de soutien."
-        description="La page Organisation clarifie les niveaux de responsabilite mis en avant dans le dossier : gouvernance centrale, representation territoriale et departements thematiques."
+        title="Une organisation présentée entre direction générale, relais régionaux et services de soutien."
+        description="La page Organisation clarifie les niveaux de responsabilité mis en avant dans le dossier : gouvernance centrale, représentation territoriale et départements thématiques."
         image="/images/hero/strategy-meeting.jpg"
-        imageAlt="Reunion de coordination institutionnelle"
+        imageAlt="Réunion de coordination institutionnelle"
       />
 
-      <section className="section-space content-grid">
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+      <section className="container-shell section-gap">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <Reveal>
             <SectionHeading
-              eyebrow="Direction generale"
-              title="Les responsabilites centrales"
-              description="La direction generale porte l'orientation, la representation et la coherence des grandes priorites institutionnelles."
+              eyebrow="Direction générale"
+              title="Les responsabilités centrales"
+              description="La direction générale porte l'orientation, la représentation et la cohérence des grandes priorités institutionnelles."
             />
             <div className="mt-8 grid gap-4">
               {executiveLeaders.map((leader) => (
-                <article
-                  key={leader.name}
-                  className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]"
-                >
+                <article key={leader.name} className="panel-muted rounded-[1.7rem] p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                     {leader.role}
                   </p>
                   <h2 className="mt-3 text-2xl font-semibold text-[var(--foreground)]">
                     {leader.name}
                   </h2>
-                  <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                    {leader.description}
-                  </p>
+                  <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{leader.description}</p>
                 </article>
               ))}
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+            <div className="media-frame">
               <Image
                 src="/images/operations/strategy-meeting-room.jpg"
-                alt="Salle de reunion pour la coordination institutionnelle"
+                alt="Salle de réunion pour la coordination institutionnelle"
                 width={1200}
                 height={1000}
-                className="h-full w-full object-cover"
+                className="aspect-[4/3.5] w-full object-cover"
               />
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap pt-0">
         <SectionHeading
-          eyebrow="Relais de representation"
-          title="Profils documentes par des portraits coherents"
-          description="Les responsables affiches ici correspondent aux images de portrait disponibles et permettent une lecture plus credible des fonctions de representation et de coordination."
+          eyebrow="Relais de représentation"
+          title="Profils documentés par des portraits cohérents"
+          description="Les responsables affichés ici correspondent aux images de portrait disponibles et permettent une lecture crédible des fonctions de représentation et de coordination."
         />
         <div className="mt-10">
           <LeadershipGrid items={leadership} />
         </div>
       </section>
 
-      <section className="section-space content-grid">
-        <div className="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+      <section className="container-shell section-gap pt-0">
+        <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
           <Reveal>
-            <div className="rounded-[36px] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-soft)]">
+            <div className="panel-muted rounded-[2rem] p-4">
               <Image
                 src="/images/leadership/former-commissioners.jpg"
-                alt="Trois premiers hauts commissaires generaux"
+                alt="Trois premiers hauts commissaires généraux"
                 width={424}
                 height={506}
-                className="mx-auto rounded-[24px] object-cover"
+                className="mx-auto rounded-[1.6rem] object-cover"
               />
             </div>
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading
-              eyebrow="Departements et services"
-              title="Une chaine de responsabilite lisible"
-              description="La structure met en avant des departements thematiques et des services d'appui afin de couvrir les champs d'action institutionnels les plus visibles dans le dossier."
+              eyebrow="Départements et services"
+              title="Une chaîne de responsabilité lisible"
+              description="La structure met en avant des départements thématiques et des services d'appui afin de couvrir les champs d'action institutionnels les plus visibles dans le dossier."
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {departmentDetails.map((department) => (
-                <article
-                  key={department.title}
-                  className="rounded-[24px] border border-[var(--border)] bg-white px-5 py-5 shadow-[var(--shadow-card)]"
-                >
+                <article key={department.title} className="panel-muted rounded-[1.5rem] px-5 py-5">
                   <h3 className="text-base font-semibold text-[var(--foreground)]">
                     {department.title}
                   </h3>
@@ -120,17 +112,17 @@ export default function OrganisationPage() {
         </div>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap pt-0">
         <SectionHeading
-          eyebrow="Reperes de structure"
-          title="Les entites citees dans l'organisation"
-          description="Cette liste conserve les appellations institutionnelles du dossier tout en les presentant dans un format plus sobre et plus facile a parcourir."
+          eyebrow="Repères de structure"
+          title="Les entités citées dans l'organisation"
+          description="Cette liste conserve les appellations institutionnelles du dossier tout en les présentant dans un format plus sobre et plus facile à parcourir."
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {departments.map((department) => (
             <div
               key={department}
-              className="rounded-[24px] border border-[var(--border)] bg-white px-5 py-4 text-sm leading-7 text-[var(--foreground)] shadow-[var(--shadow-card)]"
+              className="panel-muted rounded-[1.45rem] px-5 py-4 text-sm leading-7 text-[var(--foreground)]"
             >
               {department}
             </div>

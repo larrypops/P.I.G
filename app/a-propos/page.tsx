@@ -8,9 +8,9 @@ import { createMetadata } from "@/lib/metadata";
 import { aboutPillars, executiveLeaders, timeline, values } from "@/lib/site-data";
 
 export const metadata = createMetadata({
-  title: "A propos",
+  title: "À propos",
   description:
-    "Historique, positionnement, valeurs et repères institutionnels de la Police Internationale d'Intervention Generale.",
+    "Historique, positionnement, valeurs et repères institutionnels de la Police Internationale d'Intervention Générale.",
   path: "/a-propos",
 });
 
@@ -18,40 +18,37 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="A propos"
-        title="Une presentation construite autour de l'histoire, de la vocation et de la responsabilite institutionnelle."
-        description="Cette page rassemble les repères de creation, la logique de positionnement et les elements de credibilite mis en avant dans le dossier source."
+        eyebrow="À propos"
+        title="Une présentation construite autour de l'histoire, de la vocation et de la responsabilité institutionnelle."
+        description="Cette page rassemble les repères de création, la logique de positionnement et les éléments de crédibilité mis en avant dans le dossier source."
         image="/images/about/headquarters-inauguration-group.jpg"
-        imageAlt="Photo de groupe devant le siege national"
+        imageAlt="Photo de groupe devant le siège national"
         primaryCta={{ href: "/organisation", label: "Voir l'organisation" }}
         secondaryCta={{ href: "/contact", label: "Nous contacter" }}
       />
 
-      <section className="section-space content-grid">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <section className="container-shell section-gap">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <Reveal>
-            <div className="overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)]">
+            <div className="media-frame">
               <Image
                 src="/images/about/minat-group-photo.jpg"
-                alt="Photo de groupe au siege national"
+                alt="Photo de groupe au siège national"
                 width={1200}
                 height={1200}
-                className="h-full w-full object-cover"
+                className="aspect-[4/4.2] w-full object-cover"
               />
             </div>
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading
               eyebrow="Positionnement"
-              title="Un discours institutionnel ancre dans la protection, la veille et la coordination"
-              description="Le contenu du site decrit la P.I.G comme une organisation qui cherche a articuler presence de terrain, discipline institutionnelle, cooperation et capacite de mediation."
+              title="Un discours institutionnel ancré dans la protection, la veille et la coordination"
+              description="Le contenu du site décrit la P.I.G comme une organisation qui cherche à articuler présence de terrain, discipline institutionnelle, coopération et capacité de médiation."
             />
             <div className="mt-8 grid gap-4">
               {aboutPillars.map((pillar) => (
-                <article
-                  key={pillar.title}
-                  className="rounded-[24px] border border-[var(--border)] bg-white px-5 py-5 shadow-[var(--shadow-card)]"
-                >
+                <article key={pillar.title} className="panel-muted rounded-[1.5rem] px-5 py-5">
                   <h2 className="text-lg font-semibold text-[var(--foreground)]">{pillar.title}</h2>
                   <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{pillar.description}</p>
                 </article>
@@ -61,19 +58,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap pt-0">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
           <Reveal>
             <SectionHeading
               eyebrow="Vision de service"
-              title="Une lecture axee sur la protection des personnes, l'encadrement et la prevention"
-              description="Au-dela de l'historique, le site cherche a presenter une organisation responsable, dotee d'une mission de veille, d'assistance, d'information et de regulation."
+              title="Une lecture axée sur la protection des personnes, l'encadrement et la prévention"
+              description="Au-delà de l'historique, le site présente une organisation responsable, dotée d'une mission de veille, d'assistance, d'information et de régulation."
             />
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {values.map((value) => (
                 <div
                   key={value}
-                  className="rounded-[24px] border border-[var(--border)] bg-white px-5 py-4 text-sm font-medium text-[var(--foreground)] shadow-[var(--shadow-card)]"
+                  className="panel-muted rounded-[1.35rem] px-5 py-4 text-sm font-medium text-[var(--foreground)]"
                 >
                   {value}
                 </div>
@@ -81,15 +78,15 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="rounded-[32px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)]">
+            <div className="panel-muted rounded-[2rem] p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
-                Direction generale
+                Direction générale
               </p>
               <div className="mt-5 grid gap-4">
                 {executiveLeaders.map((leader) => (
                   <article
                     key={leader.name}
-                    className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)] px-5 py-5"
+                    className="rounded-[1.4rem] border border-[var(--border)] bg-[var(--surface)] px-5 py-5"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
                       {leader.role}
@@ -108,16 +105,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap pt-0">
         <SectionHeading
           eyebrow="Historique"
           title="Repères chronologiques"
-          description="Cette frise restitue la creation de l'organisation et les phases de gouvernance mises en avant dans le dossier institutionnel."
+          description="Cette frise restitue la création de l'organisation et les phases de gouvernance mises en avant dans le dossier institutionnel."
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-5">
           {timeline.map((step, index) => (
             <Reveal key={step.period} delay={index * 90}>
-              <article className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]">
+              <article className="panel-muted h-full rounded-[1.7rem] p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                   {step.period}
                 </p>
@@ -127,17 +124,11 @@ export default function AboutPage() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            href="/gouvernance"
-            className="rounded-full bg-[var(--brand)] px-6 py-3 text-sm font-semibold text-[var(--brand-contrast)] shadow-[var(--shadow-soft)] transition hover:bg-[var(--brand-dark)]"
-          >
+        <div className="mt-8 flex flex-wrap gap-3.5">
+          <Link href="/gouvernance" className="button-primary">
             Approfondir la gouvernance
           </Link>
-          <Link
-            href="/galerie"
-            className="rounded-full border border-[var(--border-strong)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
-          >
+          <Link href="/galerie" className="button-secondary">
             Voir les images documentaires
           </Link>
         </div>

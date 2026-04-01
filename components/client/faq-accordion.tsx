@@ -16,7 +16,7 @@ export function FaqAccordion({ items }: { items: Item[] }) {
         const open = openIndex === index;
 
         return (
-          <div key={item.question} className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-card)]">
+          <div key={item.question} className="panel-muted rounded-[1.75rem] p-6">
             <button
               type="button"
               onClick={() => setOpenIndex(open ? -1 : index)}

@@ -50,7 +50,7 @@ export function GalleryFilter({ items }: GalleryFilterProps) {
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredItems.map((item, index) => (
           <Reveal key={`${item.title}-${item.image}`} delay={index * 40}>
-            <article className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-white shadow-[var(--shadow-card)]">
+            <article className="panel-muted overflow-hidden rounded-[1.75rem]">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={item.image}

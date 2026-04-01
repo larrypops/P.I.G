@@ -68,10 +68,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <body className={`${fontDisplay.variable} ${fontSans.variable} bg-[var(--background)] font-sans text-[var(--foreground)] antialiased`}>
-        <div className="min-h-screen">
+      <body
+        className={`${fontDisplay.variable} ${fontSans.variable} bg-[var(--background)] font-sans text-[var(--foreground)] antialiased`}
+      >
+        <div className="min-h-screen overflow-x-clip">
           <SiteHeader />
-          <main>{children}</main>
+          <main className="relative flex min-h-[calc(100vh-5rem)] flex-col gap-0">
+            {children}
+          </main>
           <SiteFooter />
         </div>
       </body>

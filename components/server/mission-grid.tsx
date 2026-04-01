@@ -9,7 +9,7 @@ export function MissionGrid({ items }: { items: Mission[] }) {
       {items.map((item) => (
         <article
           key={item.title}
-          className="group rounded-[30px] border border-white/55 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.78))] p-7 shadow-[var(--shadow-card)] transition hover:-translate-y-1.5 hover:shadow-[var(--shadow-soft)]"
+          className="panel-muted group rounded-[1.9rem] p-7 transition hover:-translate-y-1.5 hover:shadow-[var(--shadow-soft)]"
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,rgba(183,138,51,0.18),rgba(183,138,51,0.06))]">
             <div className="h-4 w-4 rounded-full bg-[var(--brand)] transition group-hover:scale-110" />

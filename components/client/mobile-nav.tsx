@@ -22,7 +22,7 @@ export function MobileNav() {
         Menu
       </button>
       {open ? (
-        <div className="absolute left-4 right-4 top-20 rounded-[28px] border border-white/45 bg-[rgba(255,255,255,0.76)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-2xl">
+        <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-[min(22rem,calc(100vw-2.25rem))] rounded-[1.75rem] border border-white/45 bg-[rgba(255,255,255,0.86)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-2xl">
           <nav className="flex flex-col gap-2">
             {navigation.map((item) => {
               const active = pathname === item.href;
@@ -42,6 +42,9 @@ export function MobileNav() {
                 </Link>
               );
             })}
+            <Link href="/contact" className="button-primary mt-2" onClick={() => setOpen(false)}>
+              Nous contacter
+            </Link>
           </nav>
         </div>
       ) : null}

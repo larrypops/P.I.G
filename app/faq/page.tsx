@@ -7,7 +7,7 @@ import { faqCategories, faqItems } from "@/lib/site-data";
 export const metadata = createMetadata({
   title: "FAQ",
   description:
-    "Reponses aux questions frequentes sur la Police Internationale d'Intervention Generale, sa vocation, ses missions et ses contacts.",
+    "Réponses aux questions fréquentes sur la Police Internationale d'Intervention Générale, sa vocation, ses missions et ses contacts.",
   path: "/faq",
 });
 
@@ -16,26 +16,23 @@ export default function FaqPage() {
     <>
       <PageHero
         eyebrow="FAQ"
-        title="Les questions frequentes sur la vocation, les missions, la gouvernance et les contacts."
-        description="La FAQ complete le site avec un format direct et utile pour les visiteurs qui veulent comprendre rapidement le positionnement et les modalites de prise de contact."
+        title="Les questions fréquentes sur la vocation, les missions, la gouvernance et les contacts."
+        description="La FAQ complète le site avec un format direct et utile pour les visiteurs qui veulent comprendre rapidement le positionnement et les modalités de prise de contact."
         image="/images/operations/strategy-meeting-portrait-1.jpg"
-        imageAlt="Reunion strategique en format portrait"
+        imageAlt="Réunion stratégique en format portrait"
       />
 
-      <section className="section-space content-grid">
+      <section className="container-shell section-gap">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <SectionHeading
               eyebrow="Parcours de lecture"
-              title="Des reperes pour trouver la bonne information"
-              description="La FAQ est organisee autour de deux besoins principaux : comprendre l'organisation et preparer une prise de contact utile."
+              title="Des repères pour trouver la bonne information"
+              description="La FAQ est organisée autour de deux besoins principaux : comprendre l'organisation et préparer une prise de contact utile."
             />
             <div className="mt-8 grid gap-4">
               {faqCategories.map((category) => (
-                <article
-                  key={category.title}
-                  className="rounded-[24px] border border-[var(--border)] bg-white p-5 shadow-[var(--shadow-card)]"
-                >
+                <article key={category.title} className="panel-muted rounded-[1.5rem] p-5">
                   <h2 className="text-lg font-semibold text-[var(--foreground)]">{category.title}</h2>
                   <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--muted)]">
                     {category.items.map((item) => (
@@ -48,9 +45,9 @@ export default function FaqPage() {
           </div>
           <div>
             <SectionHeading
-              eyebrow="Questions frequentes"
+              eyebrow="Questions fréquentes"
               title="Un format simple pour expliquer l'essentiel"
-              description="Les reponses reprennent les informations presentes sur le site et les rendent immediatement exploitables."
+              description="Les réponses reprennent les informations présentes sur le site et les rendent immédiatement exploitables."
             />
             <div className="mt-10">
               <FaqAccordion items={faqItems} />

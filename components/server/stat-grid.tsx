@@ -9,7 +9,7 @@ export function StatGrid({ items }: { items: Stat[] }) {
       {items.map((item) => (
         <div
           key={item.label}
-          className="rounded-[30px] border border-white/55 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,255,255,0.78))] p-6 shadow-[var(--shadow-card)] backdrop-blur-xl"
+          className="panel-muted rounded-[1.75rem] p-6"
         >
           <p className="text-4xl font-display font-semibold text-[var(--foreground)]">{item.value}</p>
           <div className="mt-4 h-px w-12 bg-[linear-gradient(90deg,var(--brand),transparent)]" />

@@ -16,9 +16,9 @@ import {
 } from "@/lib/site-data";
 
 export const metadata = createPageMetadata({
-  title: "Gouvernance et hierarchie",
+  title: "Gouvernance et hiérarchie",
   description:
-    "Decouvrez la direction generale, les organes de gouvernance, les departements et la hierarchie de la Police Internationale d'Intervention Generale.",
+    "Découvrez la direction générale, les organes de gouvernance, les départements et la hiérarchie de la Police Internationale d'Intervention Générale.",
   path: "/gouvernance",
 });
 
@@ -27,10 +27,10 @@ export default function GouvernancePage() {
     <>
       <PageHero
         eyebrow="Gouvernance"
-        title="Une lecture structuree de la direction, des organes de pilotage et de la chaine de responsabilite."
-        description="La gouvernance de la P.I.G est presentee comme un ensemble articule entre direction generale, organes de pilotage, conseils specialises, departements et hierarchie des grades."
+        title="Une lecture structurée de la direction, des organes de pilotage et de la chaîne de responsabilité."
+        description="La gouvernance de la P.I.G est présentée comme un ensemble articulé entre direction générale, organes de pilotage, conseils spécialisés, départements et hiérarchie des grades."
         image="/images/hero/strategy-meeting.jpg"
-        imageAlt="Reunion strategique de gouvernance"
+        imageAlt="Réunion stratégique de gouvernance"
         primaryCta={{ href: "/organisation", label: "Voir l'organisation" }}
         secondaryCta={{ href: "/contact", label: "Prendre contact" }}
       />
@@ -41,11 +41,11 @@ export default function GouvernancePage() {
             <SectionHeading
               eyebrow="Direction"
               title="Le niveau central de commandement"
-              description="Cette premiere lecture distingue la direction generale des relais de representation pour clarifier le centre de decision et les niveaux de deploiement."
+              description="Cette première lecture distingue la direction générale des relais de représentation pour clarifier le centre de décision et les niveaux de déploiement."
             />
             <div className="mt-8 grid gap-4">
               {executiveLeaders.map((leader) => (
-                <article key={leader.name} className="panel p-6">
+                <article key={leader.name} className="panel-muted rounded-[1.7rem] p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
                     {leader.role}
                   </p>
@@ -61,22 +61,22 @@ export default function GouvernancePage() {
           </Reveal>
 
           <Reveal delay={80}>
-            <div className="panel overflow-hidden">
+            <div className="panel-muted overflow-hidden rounded-[2rem]">
               <div className="relative min-h-[420px]">
                 <Image
                   src="/images/governance/former-commissioners.jpg"
-                  alt="Memoire institutionnelle de la gouvernance"
+                  alt="Mémoire institutionnelle de la gouvernance"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
-                  Memoire institutionnelle
+                  Mémoire institutionnelle
                 </p>
                 <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                  Les references historiques appuient la continuite de la gouvernance, tandis que
-                  les organes actuels structurent la lecture operative du site.
+                  Les références historiques appuient la continuité de la gouvernance, tandis que
+                  les organes actuels structurent la lecture opérationnelle du site.
                 </p>
               </div>
             </div>
@@ -87,13 +87,13 @@ export default function GouvernancePage() {
       <section className="container-shell section-gap pt-0">
         <SectionHeading
           eyebrow="Relais territoriaux"
-          title="Des profils qui incarnent la representation et le deploiement"
-          description="Les portraits disponibles sont regroupes ici pour mieux distinguer les fonctions regionales et la relation avec les partenaires externes."
+          title="Des profils qui incarnent la représentation et le déploiement"
+          description="Les portraits disponibles sont regroupés ici pour mieux distinguer les fonctions régionales et la relation avec les partenaires externes."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {teamProfiles.map((profile, index) => (
             <Reveal key={profile.name} delay={index * 60}>
-              <article className="panel overflow-hidden">
+              <article className="panel-muted overflow-hidden rounded-[1.8rem]">
                 <div className="relative aspect-[4/4.5]">
                   <Image src={profile.image} alt={profile.name} fill className="object-cover" />
                 </div>
@@ -114,11 +114,11 @@ export default function GouvernancePage() {
       <section className="container-shell section-gap pt-0">
         <div className="grid gap-8 xl:grid-cols-3">
           <Reveal className="xl:col-span-1">
-            <div className="panel h-full p-8">
+            <div className="panel-muted h-full rounded-[2rem] p-8">
               <SectionHeading
                 eyebrow="Organes"
                 title="Les instances de pilotage"
-                description="Les organes listes dans le dossier sont ici reformules comme des niveaux de pilotage et de regulation."
+                description="Les organes listés dans le dossier sont ici reformulés comme des niveaux de pilotage et de régulation."
               />
               <div className="mt-8 space-y-3">
                 {governanceBodyDetails.map((body) => (
@@ -135,11 +135,11 @@ export default function GouvernancePage() {
           </Reveal>
 
           <Reveal delay={80} className="xl:col-span-1">
-            <div className="panel h-full p-8">
+            <div className="panel-muted h-full rounded-[2rem] p-8">
               <SectionHeading
-                eyebrow="Conseils specialises"
+                eyebrow="Conseils spécialisés"
                 title="Les expertises transversales"
-                description="Ces conseils donnent une structure plus lisible aux domaines sensibles relies aux missions et a la gouvernance."
+                description="Ces conseils donnent une structure plus lisible aux domaines sensibles reliés aux missions et à la gouvernance."
               />
               <div className="mt-8 space-y-3">
                 {specializedBodyDetails.map((body) => (
@@ -156,11 +156,11 @@ export default function GouvernancePage() {
           </Reveal>
 
           <Reveal delay={160} className="xl:col-span-1">
-            <div className="panel h-full p-8">
+            <div className="panel-muted h-full rounded-[2rem] p-8">
               <SectionHeading
-                eyebrow="Departements"
-                title="Les poles metiers"
-                description="Les departements thementiques permettent de relier les organes de pilotage aux activites visibles sur le site."
+                eyebrow="Départements"
+                title="Les pôles métiers"
+                description="Les départements thématiques permettent de relier les organes de pilotage aux activités visibles sur le site."
               />
               <div className="mt-8 space-y-3">
                 {departmentDetails.map((department) => (
@@ -184,14 +184,14 @@ export default function GouvernancePage() {
 
       <section className="container-shell section-gap pt-0">
         <SectionHeading
-          eyebrow="Hierarchie"
-          title="Une organisation des grades qui soutient la chaine de responsabilite"
-          description="Le dossier decrit plusieurs groupes de grades. Ils sont presentes ici pour donner une lecture plus ordonnee de la structuration interne."
+          eyebrow="Hiérarchie"
+          title="Une organisation des grades qui soutient la chaîne de responsabilité"
+          description="Le dossier décrit plusieurs groupes de grades. Ils sont présentés ici pour donner une lecture plus ordonnée de la structuration interne."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {rankGroups.map((group, index) => (
             <Reveal key={group.title} delay={index * 60}>
-              <article className="panel h-full rounded-[1.75rem] p-6">
+              <article className="panel-muted h-full rounded-[1.75rem] p-6">
                 <h3 className="font-display text-2xl font-semibold text-[var(--foreground)]">
                   {group.title}
                 </h3>
@@ -209,16 +209,14 @@ export default function GouvernancePage() {
       <section className="container-shell section-gap pt-0">
         <SectionHeading
           eyebrow="Frise historique"
-          title="Les Hauts Commissaires Generaux depuis la creation de la P.I.G"
-          description="Cette chronologie restitue la continuite de la direction generale et son evolution dans le temps."
+          title="Les Hauts Commissaires Généraux depuis la création de la P.I.G"
+          description="Cette chronologie restitue la continuité de la direction générale et son évolution dans le temps."
         />
         <div className="mt-10 space-y-6">
           {commissionersTimeline.map((item, index) => (
             <Reveal key={item.years} delay={index * 70}>
-              <article className="panel rounded-[1.75rem] p-6 lg:grid lg:grid-cols-[220px_1fr] lg:items-start lg:gap-8">
-                <p className="font-display text-2xl font-semibold text-[var(--brand)]">
-                  {item.years}
-                </p>
+              <article className="panel-muted rounded-[1.75rem] p-6 lg:grid lg:grid-cols-[220px_1fr] lg:items-start lg:gap-8">
+                <p className="font-display text-2xl font-semibold text-[var(--brand)]">{item.years}</p>
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-[var(--foreground)]">
                     {item.name}
@@ -233,8 +231,8 @@ export default function GouvernancePage() {
 
       <CtaBanner
         title="Besoin d'une mise en relation avec l'organisation ?"
-        description="Consultez les coordonnees de la P.I.G pour toute demande d'information, de representation ou de cooperation institutionnelle."
-        primary={{ href: "/contact", label: "Aller a la page contact" }}
+        description="Consultez les coordonnées de la P.I.G pour toute demande d'information, de représentation ou de coopération institutionnelle."
+        primary={{ href: "/contact", label: "Aller à la page contact" }}
       />
     </>
   );

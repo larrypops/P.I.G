@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #f4f1eb;
-  --background-strong: #ebe5db;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: rgba(255, 255, 255, 0.88);
-  --surface-muted: #efe6d8;
+  --background: #f5f1e8;
+  --background-strong: #ebe4d7;
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --surface-muted: #efe7d9;
   --foreground: #12161c;
-  --muted: #5f6773;
+  --muted: #5c6470;
   --brand: #b78a33;
   --brand-strong: #94671e;
+  --brand-dark: #7f5819;
   --brand-light: #e5c98f;
   --brand-fade: rgba(183, 138, 51, 0.12);
   --brand-contrast: #fffdf8;
@@ -34,6 +35,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: clip;
   background:
     radial-gradient(circle at top left, rgba(183, 138, 51, 0.14), transparent 28%),
     radial-gradient(circle at 85% 10%, rgba(18, 22, 28, 0.08), transparent 22%),
@@ -59,6 +61,8 @@ a {
 }
 
 img {
+  display: block;
+  max-width: 100%;
   transform: translateZ(0);
 }
 
@@ -88,6 +92,13 @@ img {
     color: var(--muted);
   }
 
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+  }
+
   button,
   a,
   input,
@@ -107,15 +118,25 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 82rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    max-width: 80rem;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+  }
+
+  .content-narrow {
+    width: 100%;
+    max-width: 46rem;
   }
 
   .section-space,
   .section-gap {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding-top: 4.75rem;
+    padding-bottom: 4.75rem;
+  }
+
+  .section-tight {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .panel {
@@ -125,6 +146,28 @@ img {
       linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.74));
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(18px) saturate(145%);
+  }
+
+  .panel-muted {
+    border: 1px solid rgba(18, 22, 28, 0.08);
+    border-radius: calc(var(--radius-xl) - 0.5rem);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 243, 236, 0.86));
+    box-shadow: var(--shadow-card);
+  }
+
+  .panel-dark {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(145deg, #13171d 0%, #1a2129 58%, #2d2416 100%);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .media-frame {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: calc(var(--radius-xl) + 0.25rem);
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: var(--shadow-soft);
   }
 
   .eyebrow {
@@ -198,6 +241,33 @@ img {
     background: rgba(255, 255, 255, 0.9);
     color: var(--brand-strong);
   }
+
+  .button-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.9rem 1.45rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: white;
+    transition:
+      transform 0.24s ease,
+      border-color 0.24s ease,
+      background-color 0.24s ease;
+  }
+
+  .button-ghost:hover {
+    transform: translateY(-2px);
+    border-color: rgba(229, 201, 143, 0.36);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .prose-readable {
+    max-width: 44rem;
+  }
 }
 
 @media (min-width: 640px) {
@@ -213,6 +283,11 @@ img {
       padding-top: 5.75rem;
       padding-bottom: 5.75rem;
     }
+
+    .section-tight {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
   }
 }
 
@@ -222,6 +297,17 @@ img {
     .container-shell {
       padding-left: 2rem;
       padding-right: 2rem;
+    }
+
+    .section-space,
+    .section-gap {
+      padding-top: 6.5rem;
+      padding-bottom: 6.5rem;
+    }
+
+    .section-tight {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 }
@@ -258,4 +344,18 @@ img {
 
 .float-slow {
   animation: float 10s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
