@@ -3,15 +3,22 @@ type SectionHeadingProps = {
   title: string;
   description: string;
   align?: "left" | "center";
+  compact?: boolean;
 };
 
-export function SectionHeading({ eyebrow, title, description, align = "left" }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  align = "left",
+  compact = false,
+}: SectionHeadingProps) {
   const alignment = align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl";
 
   return (
     <div className={alignment}>
-      <span className="eyebrow">{eyebrow}</span>
-      <h2 className="mt-5 text-balance font-display text-[2rem] font-semibold leading-[1.02] text-[var(--foreground)] sm:text-[2.45rem] lg:text-[3.1rem]">
+      <span className={compact ? "kicker-line" : "eyebrow"}>{eyebrow}</span>
+      <h2 className={`mt-5 text-balance font-display font-semibold leading-[1.02] text-[var(--foreground)] ${compact ? "text-[1.8rem] sm:text-[2.15rem] lg:text-[2.45rem]" : "text-[2rem] sm:text-[2.45rem] lg:text-[3.1rem]"}`}>
         {title}
       </h2>
       <p

@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="mt-20 overflow-hidden border-t border-white/8 bg-[linear-gradient(180deg,#12161c_0%,#171d24_58%,#1b2026_100%)] text-white">
       <div className="container-shell py-16 sm:py-20">
         <div className="panel-dark overflow-hidden px-6 py-8 sm:px-8 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.75fr_0.9fr]">
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.7fr_0.9fr_0.8fr]">
             <div className="space-y-5">
               <div className="flex items-center gap-3">
                 <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-white/10 bg-white/95 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
@@ -69,6 +69,30 @@ export function SiteFooter() {
               <Link href="/contact" className="button-ghost">
                 Accéder à la page contact
               </Link>
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/78">
+                Repères
+              </p>
+              <div className="space-y-3">
+                <div className="rounded-[1.35rem] border border-white/10 bg-white/5 px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-light)]">
+                    Vocation
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-white/68">
+                    Protection, coordination, médiation et suivi institutionnel.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-white/10 bg-white/5 px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-light)]">
+                    Usage du site
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-white/68">
+                    Comprendre l'organisation, ses missions et les modalités de prise de contact.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">

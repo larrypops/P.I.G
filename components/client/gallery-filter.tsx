@@ -36,10 +36,10 @@ export function GalleryFilter({ items }: GalleryFilterProps) {
             type="button"
             onClick={() => setActive(category)}
             className={cn(
-              "rounded-full px-5 py-3 text-sm font-semibold transition",
+              "rounded-full px-5 py-3 text-sm font-semibold transition duration-300",
               active === category
                 ? "bg-[var(--foreground)] text-white shadow-[var(--shadow-soft)]"
-                : "border border-[var(--border-strong)] bg-white/85 text-[var(--foreground)] hover:border-[var(--brand)] hover:bg-[var(--brand-fade)]",
+                : "border border-[var(--border-strong)] bg-white/85 text-[var(--foreground)] hover:-translate-y-0.5 hover:border-[var(--brand)] hover:bg-[var(--brand-fade)]",
             )}
           >
             {category}
@@ -49,21 +49,22 @@ export function GalleryFilter({ items }: GalleryFilterProps) {
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredItems.map((item, index) => (
-          <Reveal key={`${item.title}-${item.image}`} delay={index * 40}>
-            <article className="panel-muted overflow-hidden rounded-[1.75rem]">
+          <Reveal key={`${item.title}-${item.image}`} delay={index * 35} variant="card">
+            <article className="panel-elevated group overflow-hidden rounded-[1.75rem]">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition duration-700 hover:scale-[1.03]"
+                  className="object-cover transition duration-700 group-hover:scale-[1.03]"
                 />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(18,22,28,0.12)_100%)] opacity-0 transition duration-500 group-hover:opacity-100" />
               </div>
               <div className="space-y-2 p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
                   {item.category}
                 </p>
-                <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">
+                <h3 className="font-display text-xl font-semibold text-[var(--foreground)] transition group-hover:text-[var(--brand-strong)]">
                   {item.title}
                 </h3>
                 <p className="text-sm leading-7 text-[var(--muted)]">{item.summary}</p>

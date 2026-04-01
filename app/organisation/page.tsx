@@ -28,6 +28,7 @@ export default function OrganisationPage() {
         description="La page Organisation clarifie les niveaux de responsabilité mis en avant dans le dossier : gouvernance centrale, représentation territoriale et départements thématiques."
         image="/images/hero/strategy-meeting.jpg"
         imageAlt="Réunion de coordination institutionnelle"
+        variant="institutional"
       />
 
       <section className="container-shell section-gap">
@@ -61,6 +62,64 @@ export default function OrganisationPage() {
                 height={1000}
                 className="aspect-[4/3.5] w-full object-cover"
               />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="container-shell section-gap pt-0">
+        <div className="panel-elevated grid gap-8 rounded-[2.1rem] px-6 py-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+          <Reveal variant="soft">
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="panel-muted overflow-hidden rounded-[1.4rem] p-2">
+                <Image
+                  src="/images/leadership/jomgang-ngongo-jean-paul.jpg"
+                  alt="Portrait du délégué régional de l'Ouest"
+                  width={900}
+                  height={1100}
+                  className="aspect-[4/5] w-full rounded-[1.1rem] object-cover"
+                />
+              </div>
+              <div className="panel-muted overflow-hidden rounded-[1.4rem] p-2">
+                <Image
+                  src="/images/leadership/mogoue-fabrice-eclador.jpg"
+                  alt="Portrait du délégué régional du Littoral"
+                  width={900}
+                  height={1100}
+                  className="aspect-[4/5] w-full rounded-[1.1rem] object-cover"
+                />
+              </div>
+              <div className="panel-muted overflow-hidden rounded-[1.4rem] p-2">
+                <Image
+                  src="/images/leadership/yaker-ekall-simone-daniella.jpg"
+                  alt="Portrait de la chargée des relations publiques"
+                  width={900}
+                  height={1100}
+                  className="aspect-[4/5] w-full rounded-[1.1rem] object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={70}>
+            <SectionHeading
+              eyebrow="Lecture humaine"
+              title="Une organisation qui s'incarne aussi dans ses relais, ses visages et ses fonctions."
+              description="Cette page se distingue de la gouvernance en privilégiant une lecture plus organique des responsabilités, des portraits et des services qui structurent l'action."
+              compact
+            />
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-5 py-4">
+                <p className="text-sm font-semibold text-[var(--foreground)]">Direction</p>
+                <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                  Porte les arbitrages, la représentation et la cohérence générale.
+                </p>
+              </div>
+              <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-5 py-4">
+                <p className="text-sm font-semibold text-[var(--foreground)]">Relais</p>
+                <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                  Font circuler l'information et assurent la continuité institutionnelle sur le terrain.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>

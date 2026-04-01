@@ -33,6 +33,7 @@ export default function GouvernancePage() {
         imageAlt="Réunion stratégique de gouvernance"
         primaryCta={{ href: "/organisation", label: "Voir l'organisation" }}
         secondaryCta={{ href: "/contact", label: "Prendre contact" }}
+        variant="institutional"
       />
 
       <section className="container-shell section-gap">
@@ -77,6 +78,52 @@ export default function GouvernancePage() {
                 <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
                   Les références historiques appuient la continuité de la gouvernance, tandis que
                   les organes actuels structurent la lecture opérationnelle du site.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="container-shell section-gap pt-0">
+        <div className="panel-elevated grid gap-8 rounded-[2.15rem] px-6 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <Reveal variant="soft">
+            <SectionHeading
+              eyebrow="Architecture institutionnelle"
+              title="Une page pensée pour clarifier les niveaux de décision, d'appui et de continuité."
+              description="La gouvernance est présentée ici dans un ordre plus hiérarchisé afin de distinguer la direction, les organes de pilotage, les expertises spécialisées et la mémoire de commandement."
+              compact
+            />
+            <div className="mt-7 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/78 px-4 py-4">
+                <p className="text-sm font-semibold text-[var(--foreground)]">Direction</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Porte la représentation générale et l'impulsion stratégique.</p>
+              </div>
+              <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/78 px-4 py-4">
+                <p className="text-sm font-semibold text-[var(--foreground)]">Organes</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Structurent la décision, la régulation et le suivi des responsabilités.</p>
+              </div>
+              <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/78 px-4 py-4">
+                <p className="text-sm font-semibold text-[var(--foreground)]">Mémoire</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Inscrit la continuité de commandement dans une lecture institutionnelle plus longue.</p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={70}>
+            <div className="grid gap-4 sm:grid-cols-[0.8fr_1.2fr]">
+              <div className="panel-muted overflow-hidden rounded-[1.55rem] p-2">
+                <Image
+                  src="/images/governance/nebout-etienne.jpg"
+                  alt="Portrait de NEBOT Etienne"
+                  width={900}
+                  height={1100}
+                  className="aspect-[4/5] w-full rounded-[1.15rem] object-cover"
+                />
+              </div>
+              <div className="panel-dark rounded-[1.55rem] p-5 text-white">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-light)]">Mémoire de commandement</p>
+                <p className="mt-3 text-sm leading-7 text-white/72">
+                  L'histoire des Hauts Commissaires Généraux éclaire la continuité institutionnelle et donne de la profondeur à la lecture du site.
                 </p>
               </div>
             </div>

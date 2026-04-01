@@ -13,7 +13,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 pt-3 sm:pt-4">
       <div className="container-shell">
-        <div className="flex items-center justify-between gap-4 rounded-[1.75rem] border border-white/50 bg-[rgba(255,255,255,0.72)] px-4 py-3 shadow-[var(--shadow-crisp)] backdrop-blur-2xl sm:px-5 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:px-6">
+        <div className="panel-elevated flex items-center justify-between gap-4 rounded-[1.75rem] px-4 py-3 sm:px-5 xl:grid xl:grid-cols-[auto_1fr_auto] xl:gap-6 xl:px-6">
           <Link href="/" className="flex min-w-0 items-center gap-3">
             <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-white/50 bg-white/85 shadow-[var(--shadow-card)]">
               <Image src="/logo/logo.png" alt="Logo P.I.G" fill className="object-cover" sizes="48px" />
@@ -28,7 +28,7 @@ export function SiteHeader() {
             </div>
           </Link>
 
-          <nav className="hidden flex-wrap items-center justify-center gap-1.5 md:flex">
+          <nav className="hidden flex-wrap items-center justify-center gap-1.5 xl:flex">
             {navigation.map((item) => {
               const active = pathname === item.href;
 
@@ -52,7 +52,9 @@ export function SiteHeader() {
             <Link href="/contact" className="button-primary hidden lg:inline-flex">
               Nous contacter
             </Link>
-            <MobileNav />
+            <div className="xl:hidden">
+              <MobileNav />
+            </div>
           </div>
         </div>
       </div>

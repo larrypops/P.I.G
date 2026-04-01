@@ -25,6 +25,7 @@ export default function AboutPage() {
         imageAlt="Photo de groupe devant le siège national"
         primaryCta={{ href: "/organisation", label: "Voir l'organisation" }}
         secondaryCta={{ href: "/contact", label: "Nous contacter" }}
+        variant="narrative"
       />
 
       <section className="container-shell section-gap">
@@ -53,6 +54,52 @@ export default function AboutPage() {
                   <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{pillar.description}</p>
                 </article>
               ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="container-shell section-gap pt-0">
+        <div className="panel-elevated grid gap-8 rounded-[2.1rem] px-6 py-8 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+          <Reveal variant="soft">
+            <div>
+              <SectionHeading
+                eyebrow="Lecture en trois temps"
+                title="Une organisation racontée par son ancrage, son cadre d'action et sa continuité."
+                description="Cette section synthétise la manière dont le site structure le récit institutionnel sans rompre avec le ton documentaire du projet."
+                compact
+              />
+              <div className="mt-7 grid gap-4">
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-5 py-4">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">Ancrage</p>
+                  <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                    Le siège, les portraits et les images de groupe établissent une présence tangible.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-5 py-4">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">Méthode</p>
+                  <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                    Le vocabulaire de la veille, de la protection et de la médiation structure l'ensemble du site.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-5 py-4">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">Continuité</p>
+                  <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                    La chronologie et la gouvernance apportent profondeur et crédibilité au récit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={70}>
+            <div className="media-frame rounded-[1.9rem]">
+              <Image
+                src="/images/about/minat-session.jpg"
+                alt="Séance institutionnelle de travail"
+                width={1400}
+                height={1050}
+                className="aspect-[4/3.4] w-full object-cover"
+              />
             </div>
           </Reveal>
         </div>
@@ -111,7 +158,7 @@ export default function AboutPage() {
           title="Repères chronologiques"
           description="Cette frise restitue la création de l'organisation et les phases de gouvernance mises en avant dans le dossier institutionnel."
         />
-        <div className="mt-10 grid gap-5 lg:grid-cols-5">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
           {timeline.map((step, index) => (
             <Reveal key={step.period} delay={index * 90}>
               <article className="panel-muted h-full rounded-[1.7rem] p-6">

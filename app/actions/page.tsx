@@ -32,6 +32,7 @@ export default function ActionsPage() {
         imageAlt="Mission de suivi institutionnel"
         primaryCta={{ href: "/galerie", label: "Voir la galerie" }}
         secondaryCta={{ href: "/contact", label: "Prendre contact" }}
+        variant="narrative"
       />
 
       <section className="container-shell section-gap">
@@ -63,6 +64,67 @@ export default function ActionsPage() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="container-shell section-gap pt-0">
+        <div className="grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
+          <Reveal variant="soft">
+            <div className="panel-elevated rounded-[2rem] px-6 py-7">
+              <p className="kicker-line">Typologie d'actions</p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-4 py-4">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">Coordination</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Réunions stratégiques, cadrage et suivi interne.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-4 py-4">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">Suivi</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Échanges institutionnels et appréciation des méthodes de travail.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-4 py-4">
+                  <p className="text-sm font-semibold text-[var(--foreground)]">Terrain</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Présence opérationnelle, contrôle et accompagnement ciblé.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={70}>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="media-frame rounded-[1.6rem]">
+                <Image
+                  src="/images/actions/minat-visit-1.jpg"
+                  alt="Visite institutionnelle"
+                  width={1200}
+                  height={900}
+                  className="aspect-[4/3.5] w-full object-cover"
+                />
+              </div>
+              <div className="media-frame rounded-[1.6rem]">
+                <Image
+                  src="/images/gallery/meeting-1.jpg"
+                  alt="Réunion de coordination"
+                  width={1200}
+                  height={900}
+                  className="aspect-[4/3.5] w-full object-cover"
+                />
+              </div>
+              <div className="media-frame rounded-[1.6rem]">
+                <Image
+                  src="/images/gallery/meeting-2.jpg"
+                  alt="Temps d'échange institutionnel"
+                  width={1200}
+                  height={900}
+                  className="aspect-[4/3.5] w-full object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

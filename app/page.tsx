@@ -223,12 +223,56 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell section-gap pt-0">
+        <div className="panel-elevated grid gap-8 rounded-[2.2rem] px-6 py-8 lg:grid-cols-[0.85fr_1.15fr] lg:px-8 lg:py-9">
+          <Reveal variant="soft">
+            <div className="media-frame h-full rounded-[1.8rem]">
+              <Image
+                src="/images/actions/minat-visit-1.jpg"
+                alt="Rencontre institutionnelle et suivi de terrain"
+                width={1400}
+                height={1050}
+                className="aspect-[4/3.45] w-full object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={60}>
+            <div>
+              <p className="kicker-line">Lecture transversale</p>
+              <h2 className="mt-5 max-w-3xl text-balance font-display text-[2rem] font-semibold leading-[1.02] text-[var(--foreground)] sm:text-[2.4rem]">
+                Une même ligne institutionnelle relie la gouvernance, les missions et la présence de terrain.
+              </h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-3">
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-strong)]">Piloter</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Donner un cadre lisible à la hiérarchie, aux organes et aux relais.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-strong)]">Agir</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Déployer des missions de protection, de suivi et de médiation avec méthode.
+                  </p>
+                </div>
+                <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/80 px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-strong)]">Documenter</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Appuyer le discours institutionnel par des repères visuels et des preuves de contexte.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="container-shell section-gap pt-0">
         <SectionHeading
           eyebrow="Repères chronologiques"
           title="Des jalons de gouvernance depuis la création"
           description="La chronologie aide à situer la structuration de l'organisation et la succession des phases de commandement mises en avant dans le dossier."
         />
-        <div className="mt-10 grid gap-5 lg:grid-cols-5">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
           {timeline.map((step, index) => (
             <Reveal key={step.period} delay={index * 80}>
               <article className="panel-muted h-full rounded-[1.7rem] p-6">

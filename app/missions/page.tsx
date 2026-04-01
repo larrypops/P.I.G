@@ -48,8 +48,8 @@ export default function MissionsPage() {
           {missionDetails.map((mission, index) => (
             <Reveal key={mission.title} delay={index * 70}>
               <article className="panel-muted overflow-hidden rounded-[2rem]">
-                <div className="grid gap-0 lg:grid-cols-[0.42fr_0.58fr]">
-                  <div className="relative min-h-[280px]">
+                <div className={`grid gap-0 ${index % 2 === 0 ? "lg:grid-cols-[0.42fr_0.58fr]" : "lg:grid-cols-[0.58fr_0.42fr]"}`}>
+                  <div className={`relative min-h-[280px] ${index % 2 === 0 ? "" : "lg:order-last"}`}>
                     <Image src={mission.image} alt={mission.title} fill className="object-cover" />
                   </div>
                   <div className="p-8 lg:p-10">

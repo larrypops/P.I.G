@@ -4,24 +4,24 @@ export function ContactPanel() {
   return (
     <div className="space-y-8">
       <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="panel-muted rounded-[1.9rem] p-8">
+        <div className="panel-elevated rounded-[1.9rem] p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--brand)]">
             Coordonnées
           </p>
-          <div className="mt-6 space-y-6 text-sm leading-7 text-[var(--muted)]">
-            <div>
+          <div className="mt-6 grid gap-4">
+            <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/75 px-5 py-5 text-sm leading-7 text-[var(--muted)]">
               <p className="font-semibold text-[var(--foreground)]">Bureau France</p>
-              <p>{contactDetails.franceAddress}</p>
+              <p className="mt-2">{contactDetails.franceAddress}</p>
               <p>{contactDetails.francePhone}</p>
             </div>
-            <div>
+            <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/75 px-5 py-5 text-sm leading-7 text-[var(--muted)]">
               <p className="font-semibold text-[var(--foreground)]">Bureau Afrique - Cameroun</p>
-              <p>{contactDetails.cameroonAddress}</p>
+              <p className="mt-2">{contactDetails.cameroonAddress}</p>
               <p>{contactDetails.cameroonPhones.join(" • ")}</p>
             </div>
-            <div>
+            <div className="rounded-[1.35rem] border border-[var(--border)] bg-white/75 px-5 py-5 text-sm leading-7 text-[var(--muted)]">
               <p className="font-semibold text-[var(--foreground)]">Courriel principal</p>
-              <p>{contactDetails.email}</p>
+              <p className="mt-2">{contactDetails.email}</p>
             </div>
           </div>
         </div>
@@ -37,6 +37,24 @@ export function ContactPanel() {
             Utilisez les coordonnées ci-contre pour entrer en relation avec la P.I.G. La page est
             pensée pour faciliter la préparation d'une demande claire et adaptée au bon canal.
           </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-[1.25rem] border border-white/10 bg-white/5 px-4 py-4">
+              <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-light)]">
+                Canal recommandé
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/74">
+                Courriel pour les demandes structurées et partenariales.
+              </p>
+            </div>
+            <div className="rounded-[1.25rem] border border-white/10 bg-white/5 px-4 py-4">
+              <p className="text-xs uppercase tracking-[0.18em] text-[var(--brand-light)]">
+                Délai usuel
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/74">
+                Réponse sous 48 à 72 heures selon la nature de la demande.
+              </p>
+            </div>
+          </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <a
               href={`mailto:${contactDetails.email}`}
@@ -59,9 +77,11 @@ export function ContactPanel() {
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
             Types de demandes
           </p>
-          <ul className="mt-4 space-y-2 text-sm leading-7 text-[var(--muted)]">
+          <ul className="list-clean mt-4 space-y-2 text-sm leading-7 text-[var(--muted)]">
             {contactDetails.contactScopes.map((scope) => (
-              <li key={scope}>{scope}</li>
+              <li key={scope} className="rounded-[1rem] bg-white/70 px-3 py-2">
+                {scope}
+              </li>
             ))}
           </ul>
         </div>

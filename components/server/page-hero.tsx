@@ -9,6 +9,8 @@ type PageHeroProps = {
   imageAlt?: string;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
+  variant?: "institutional" | "narrative" | "utility";
+  priority?: boolean;
 };
 
 export function PageHero({
@@ -19,16 +21,21 @@ export function PageHero({
   imageAlt,
   primaryCta,
   secondaryCta,
+  variant = "institutional",
+  priority = false,
 }: PageHeroProps) {
+  const isNarrative = variant === "narrative";
+  const isUtility = variant === "utility";
+
   return (
-    <section className="section-tight relative overflow-hidden pt-6">
-      <div className="container-shell grid gap-10 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:items-center lg:gap-14">
+    <section className={`section-tight relative overflow-hidden pt-6 ${isNarrative ? "section-accent" : ""}`}>
+      <div className={`container-shell grid gap-10 ${isUtility ? "lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]" : "lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)]"} lg:items-center lg:gap-14`}>
         <div className="relative z-10">
-          <span className="eyebrow">{eyebrow}</span>
-          <h1 className="mt-6 max-w-4xl text-balance font-display text-[2.65rem] font-semibold leading-[0.96] text-[var(--foreground)] sm:text-[3.45rem] lg:text-[4.65rem]">
+          <span className={isUtility ? "kicker-line" : "eyebrow"}>{eyebrow}</span>
+          <h1 className={`mt-6 max-w-4xl text-balance font-display font-semibold leading-[0.96] text-[var(--foreground)] ${isUtility ? "text-[2.35rem] sm:text-[3rem] lg:text-[4rem]" : isNarrative ? "text-[2.7rem] sm:text-[3.55rem] lg:text-[4.8rem]" : "text-[2.65rem] sm:text-[3.45rem] lg:text-[4.65rem]"}`}>
             {title}
           </h1>
-          <p className="mt-6 prose-readable text-[1.02rem] leading-8 text-[var(--muted)] sm:text-[1.07rem]">
+          <p className={`mt-6 prose-readable leading-8 text-[var(--muted)] ${isUtility ? "text-[0.98rem] sm:text-[1.02rem]" : "text-[1.02rem] sm:text-[1.07rem]"}`}>
             {description}
           </p>
           {primaryCta || secondaryCta ? (
@@ -45,21 +52,41 @@ export function PageHero({
               ) : null}
             </div>
           ) : null}
+          {isNarrative ? (
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="panel-muted rounded-[1.35rem] px-4 py-4 text-sm leading-6 text-[var(--muted-strong)]">
+                Ancrage documentaire, ton institutionnel et narration visuelle plus lisible.
+              </div>
+              <div className="panel-muted rounded-[1.35rem] px-4 py-4 text-sm leading-6 text-[var(--muted-strong)]">
+                Chaque page conserve son contenu SSR tout en gagnant en lisibilité et en présence.
+              </div>
+            </div>
+          ) : null}
         </div>
 
-        <div className="relative">
+        <div className={`relative ${isUtility ? "lg:order-first" : ""}`}>
           <div className="absolute -left-6 -top-6 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(183,138,51,0.24),transparent_68%)] blur-2xl" />
           <div className="absolute -bottom-8 -right-8 h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(18,22,28,0.18),transparent_68%)] blur-3xl" />
-          <div className="media-frame relative">
+          <div className={`relative overflow-hidden ${isUtility ? "panel-elevated rounded-[2.2rem] p-4" : "media-frame"}`}>
             <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(18,22,28,0.08))]" />
             <Image
               src={image}
               alt={imageAlt ?? title}
               width={1400}
               height={1000}
-              className="h-full min-h-[320px] w-full object-cover sm:min-h-[420px]"
-              priority
+              className={`h-full min-h-[320px] w-full object-cover ${isUtility ? "rounded-[1.6rem] sm:min-h-[360px]" : "sm:min-h-[420px]"}`}
+              priority={priority}
             />
+            {isUtility ? (
+              <div className="absolute inset-x-6 bottom-6 z-20 rounded-[1.35rem] border border-white/25 bg-[rgba(18,22,28,0.62)] px-4 py-4 backdrop-blur-xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-light)]">
+                  Présence institutionnelle
+                </p>
+                <p className="mt-2 text-sm leading-6 text-white/78">
+                  Un cadre plus direct pour les pages de service, d'information ou de contact.
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
